@@ -1,3 +1,6 @@
+import 'package:contacts/android/views/address.view.dart';
+import 'package:contacts/android/views/editor-contact.view.dart';
+import 'package:contacts/models/contact.model.dart';
 import 'package:flutter/material.dart';
 
 class DetailsView extends StatelessWidget {
@@ -131,7 +134,14 @@ class DetailsView extends StatelessWidget {
             ),
             isThreeLine: true,
             trailing: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddressView(),
+                  ),
+                );
+              },
               child: Icon(
                 Icons.pin_drop,
                 color: Theme.of(context).primaryColor,
@@ -139,6 +149,28 @@ class DetailsView extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditorContactView(
+                model: ContactModel(
+                  id: "1",
+                  name: "Tabata Mora",
+                  email: "tabata@mora.com",
+                  phone: "11 97214-2255",
+                ),
+              ),
+            ),
+          );
+        },
+        backgroundColor: Theme.of(context).primaryColor,
+        child: Icon(
+          Icons.edit,
+          color: Theme.of(context).accentColor,
+        ),
       ),
     );
   }
