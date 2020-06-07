@@ -1,4 +1,5 @@
 import 'package:contacts/android/styles.dart';
+import 'package:contacts/android/views/details.view.dart';
 import 'package:contacts/android/views/home.view.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class AndroidApp extends StatelessWidget {
       title: 'Contact',
       debugShowCheckedModeBanner: false,
       theme: androidTheme(),
-      home: HomeView(),
+      home: DetailsView(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:contacts/android/views/details.view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -28,14 +29,21 @@ class HomeView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(48),
                 image: DecorationImage(
                   image: NetworkImage(
-                      "https://avatars3.githubusercontent.com/u/50845464?s=60&v=4"),
+                      "https://avatars1.githubusercontent.com/u/50845464?s=460&u=7cc2c1dda57d0b9b0e5a515d3f43d7ad8975cb24&v=4"),
                 ),
               ),
             ),
             title: Text("Tabata Mora"),
             subtitle: Text("19 98524-7995"),
             trailing: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsView(),
+                  ),
+                );
+              },
               child: Icon(
                 Icons.chat,
                 color: Theme.of(context).primaryColor,
